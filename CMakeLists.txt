@@ -1,5 +1,5 @@
-cmake_minimum_required(VERSION 4.2.1)
-project(PG-C LANGUAGES C VERSION 20260117)
+cmake_minimum_required(VERSION 4.2.2)
+project(PG-C LANGUAGES C VERSION 20260127)
 set(CMAKE_C_STANDARD 90) # 90 for C89, 99 for C99, 11 for C11, 17 for C17 and 23 for C23.
 set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_C_EXTENSIONS OFF)
@@ -7,6 +7,7 @@ set(CMAKE_C_FLAGS "-fdiagnostics-color=always -Wall -Wextra -Wpedantic -Wshadow 
 include(FetchContent)
 FetchContent_Declare(C-Utils GIT_REPOSITORY https://github.com/paulao255/C-Utils.git GIT_TAG main)
 FetchContent_MakeAvailable(C-Utils)
-add_executable(Executable.exe ../src/Main.c)
-target_link_libraries(Executable.exe PRIVATE C-Utils::C-Utils)
-file(COPY ${CMAKE_SOURCE_DIR}/README.md ${CMAKE_SOURCE_DIR}/LICENSE DESTINATION ${CMAKE_BINARY_DIR})
+add_executable(executable ../src/Main.c)
+target_link_libraries(executable PRIVATE C-Utils::C-Utils)
+file(COPY ${CMAKE_SOURCE_DIR}/README.md ${CMAKE_SOURCE_DIR}/LICENSE DESTINATION ${CMAKE_BINARY_DIR}/bin)
+set_target_properties(executable PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)

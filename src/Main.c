@@ -1,7 +1,3 @@
-/* Include guard: */
-#ifndef PG_C
-#define PG_C
-
 /* Importations: */
 #include "C-Utils/cutils.h"
 #include <stdio.h>
@@ -11,7 +7,7 @@
 /* PG-C version variables: */
 #define PG_C_FULL_VERSION       20260117 /* PG-C full version variable (2026/01/17). */
 #define PG_C_MAJOR_VERSION      2026     /* PG-C major version variable (2026).      */
-#define PG_C_MINOR_VERSION      01       /* PG-C minor version variable (01).        */
+#define PG_C_MINOR_VERSION      1        /* PG-C minor version variable (01).        */
 #define PG_C_PATCH_VERSION      17       /* PG-C patch version variable (17).        */
 
 /* Defines: */
@@ -51,6 +47,3 @@ int main(void)
 
 	return 0;
 }
-
-/* End code: */
-#endif
